@@ -1,0 +1,36 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+#site{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px minmax(900px, 3fr);
+    grid-template-rows: 1fr;
+}
+
+
+#sidebar{
+    border: solid;
+    border-color: red;
+
+    grid-area: span 1 / span 1;
+
+}
+
+#bookshelf{
+    border: solid;
+    border-color: blue;
+
+    grid-area: span 1 / span 1;
+}
+
+
+.book{
+    border: solid;
+    border-color: aqua;
+
+}
