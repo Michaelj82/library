@@ -9,7 +9,7 @@ html,body{
     width: 100%;
     display: grid;
     grid-template-columns: 300px minmax(400px, 3fr);
-    grid-template-rows: 1fr;
+    grid-template-rows: minmax(100px, 1fr) 9fr;
 }
 
 
@@ -18,27 +18,34 @@ html,body{
     background-color: #543421;
     color: white;
     box-shadow: 0 0 5px 1px #333;
+    z-index: 101;
 
 
-    grid-area: span 1 / span 1;
+    grid-area: span 2 / span 1;
+
+}
+#topbar{
+    background-color: #543421;
 
 }
 
 #bookshelf{
-    border: solid;
-    border-color: blue;
+
     grid-area: span 1 / span 1;
 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    background-color: #875816;
 
 
 }
 
 
-.book{
-    border: solid;
-    border-color: aqua;
+
+.book{  
+    background-color: #e0d1a8;
+
+    margin: 15px;
 
     height: 300px;
 
