@@ -14,7 +14,7 @@ html,body{
 
 
 #sidebar{
-
+    padding: 15px;
     background-color: #543421;
     color: white;
     box-shadow: 0 0 5px 1px #333;
@@ -25,14 +25,21 @@ html,body{
 }
 
 #bookshelf{
-
-
+    border: solid;
+    border-color: blue;
     grid-area: span 1 / span 1;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+
 }
 
 
 .book{
     border: solid;
     border-color: aqua;
+
+    height: 300px;
 
 }

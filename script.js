@@ -41,7 +41,27 @@ for (let i = 0; i < myLibrary.length; i++){
 
     let newBook = document.createElement('div');
     newBook.classList.add('book');
-    newBook.textContent = myLibrary[i]['title'];
+
+    let title = document.createElement('div');
+    title.textContent = myLibrary[i]['title'];
+    title.classList.add('bookTitle');
+
+    let author = document.createElement('div');
+    author.textContent = myLibrary[i]['author'];
+    author.classList.add('bookAuthor');
+
+
+    let pageCount = document.createElement('div');
+    pageCount.textContent = myLibrary[i]['pages'];
+    pageCount.classList.add('pageCount');
+
+
+    let read = document.createElement('div');
+    read.textContent = myLibrary[i]['read'];
+    read.classList.add('read');
+
+
+    newBook.append(title, author, pageCount, read);
 
     bookshelf.appendChild(newBook);
 
