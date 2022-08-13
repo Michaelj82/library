@@ -9,7 +9,7 @@ html,body{
     width: 100%;
     display: grid;
     grid-template-columns: 300px minmax(400px, 3fr);
-    grid-template-rows: minmax(100px, 1fr) 9fr;
+    grid-template-rows: minmax(75px, 1fr) 9fr;
 }
 
 
@@ -26,6 +26,9 @@ html,body{
 }
 #topbar{
     background-color: #543421;
+    box-shadow: 0 4px 2px -2px #333;
+    z-index: 100;
+
 
 }
 
@@ -44,9 +47,32 @@ html,body{
 
 .book{  
     background-color: #e0d1a8;
-
+    padding: 10px;
     margin: 15px;
 
     height: 300px;
 
+    box-shadow: 0 8px 2px -2px #333;
+
+    display: grid;
+    grid-template-rows: 2fr 5fr 1fr 1fr;
+
+
 }
+
+.book > .bookTitle{
+
+}
+
+.book > .bookAuthor{
+
+}
+
+.book > .pageCount{
+
+}
+
+.book > .read{
+    
+}
+
