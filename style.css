@@ -2,15 +2,19 @@ html,body{
     height: 100%;
     width: 100%;
     margin: 0;
+    overflow: hidden;
 }
 
 #site{
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 300px minmax(400px, 3fr);
+    grid-template-columns: 300px minmax(200px, 3fr);
     grid-template-rows: minmax(75px, 1fr) 9fr;
 }
+
+
+
 
 
 #sidebar{
@@ -28,16 +32,18 @@ html,body{
     background-color: #543421;
     box-shadow: 0 4px 2px -2px #333;
     z-index: 100;
+    margin: 0;
 
 
 }
 
 #bookshelf{
 
+    margin: 0;
     grid-area: span 1 / span 1;
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     background-color: #875816;
 
 
@@ -53,14 +59,34 @@ html,body{
     height: 300px;
 
     box-shadow: 0 8px 2px -2px #333;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+/* 
     display: grid;
-    grid-template-rows: 2fr 5fr 1fr 1fr;
+    grid-template-rows: 2fr 5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr; */
 
 
 }
 
+.book > .imageBox{
+    border: solid;
+    height: 180px;
+    width: 150px;
+    margin: 5px;
+}
+
+.book > .fileChooser{
+    width: 150px;
+    border: solid;
+}
+
+
 .book > .bookTitle{
+    align-self: center;
+    justify-self: center;
 
 }
 

@@ -32,19 +32,59 @@ addBookToLibrary(returnOfTheKing)
 
 console.log(myLibrary)
 
+
+
+
+
+
+
+
 //selects bookshelf ID
 const bookshelf = document.getElementById('bookshelf');
 
 
 //adds each book into bookshelf div
 for (let i = 0; i < myLibrary.length; i++){
-
+    //makes book object
     let newBook = document.createElement('div');
     newBook.classList.add('book');
 
+    //creates elements for book objects, ie title, imagebox, input for image, author, pagecount, read/notread
     let title = document.createElement('div');
     title.textContent = myLibrary[i]['title'];
     title.classList.add('bookTitle');
+
+    let imageBox = document.createElement('div');
+    imageBox.classList.add('imageBox');
+
+
+
+    let form = document.createElement('form');
+    let input = document.createElement('input');
+    form.classList.add('fileChooser');
+    input.setAttribute('type', 'file');
+    input.setAttribute('name', 'upload');
+    input.setAttribute('accept', 'image/');
+
+    //makes it so you can submit an image into the book
+    let uploadedImage = '';
+
+    input.addEventListener('change', function(){
+        const reader = new FileReader();
+        reader.addEventListener('load', () => {
+            uploaded_image = reader.result
+            imageBox.style.backgroundImage = `url(${uploaded_image})`;
+        });
+        reader.readAsDataURL(this.files[0]);
+    })
+
+
+
+    form.appendChild(input);
+
+
+
+
 
     let author = document.createElement('div');
     author.textContent = myLibrary[i]['author'];
@@ -60,9 +100,9 @@ for (let i = 0; i < myLibrary.length; i++){
     read.textContent = myLibrary[i]['read'];
     read.classList.add('read');
 
-
-    newBook.append(title, author, pageCount, read);
-
+    //gives book the attributes
+    newBook.append(title, imageBox, form, author, pageCount, read);
+    //puts book on bookshelf
     bookshelf.appendChild(newBook);
 
 }
