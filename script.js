@@ -1,6 +1,18 @@
 //creates library
 let myLibrary = [];
 
+// selects site
+const site = document.getElementById('site');
+
+const topbar = document.getElementById('topbar');
+
+const sidebar = document.getElementById('sidebar');
+
+const popup = document.getElementById('popup');
+
+//selects bookshelf ID
+const bookshelf = document.getElementById('bookshelf');
+
 
 //book object
 function Book(title, author, pages, read){
@@ -39,8 +51,6 @@ console.log(myLibrary)
 
 
 
-//selects bookshelf ID
-const bookshelf = document.getElementById('bookshelf');
 
 
 //adds each book into bookshelf div
@@ -107,3 +117,26 @@ for (let i = 0; i < myLibrary.length; i++){
 
 }
 
+
+let exitPopUp = function(){
+    popup.style.opacity = '0.0';
+
+    topbar.classList.remove('blur')
+    sidebar.classList.remove('blur');
+    bookshelf.classList.remove('blur')
+
+}
+
+
+//make popup for add new book form
+
+let openAddNewBook = function(){
+
+    popup.style.opacity = '1.0';
+
+    topbar.classList.add('blur');
+    sidebar.classList.add('blur');
+    bookshelf.classList.add('blur');
+
+
+}
