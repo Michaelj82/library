@@ -10,6 +10,8 @@ const sidebar = document.getElementById('sidebar');
 
 const popup = document.getElementById('popup');
 
+const searchbar = document.getElementById('searchbar');
+
 //selects bookshelf ID
 const bookshelf = document.getElementById('bookshelf');
 
@@ -121,6 +123,7 @@ function makeNewBook(){
 
 let exitPopUp = function(){
     popup.style.opacity = '0.0';
+    searchbar.disabled = false;
 
     topbar.classList.remove('blur')
     sidebar.classList.remove('blur');
@@ -134,7 +137,7 @@ let exitPopUp = function(){
 let openAddNewBook = function(){
 
     popup.style.opacity = '1.0';
-
+    searchbar.disabled = true;
     topbar.classList.add('blur');
     sidebar.classList.add('blur');
     bookshelf.classList.add('blur');
