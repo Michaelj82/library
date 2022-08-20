@@ -28,41 +28,12 @@ function Book(title, author, pages, read){
 
 function addBookToLibrary(book){
     myLibrary.push(book)
-}
 
-//makes books
-let theHobbit = new Book('The Hobbit', 'JRR Tolkien', 295, true)
-let theFellowship = new Book('The Fellowship of the Ring', 'JRR Tolkien', 423, true)
-let twoTowers = new Book('The Two Towers', 'JRR Tolkien', 352, true) 
-let returnOfTheKing = new Book ('The Return of the King', 'JRR Tolkien', 416, false)
-
-//adds books to myLibrary array
-addBookToLibrary(theHobbit)
-addBookToLibrary(theFellowship)
-addBookToLibrary(twoTowers)
-addBookToLibrary(returnOfTheKing)
-
-console.log(myLibrary)
-
-
-
-
-
-
-
-
-
-
-//adds each book into bookshelf div
-for (let i = 0; i < myLibrary.length; i++){
     //makes book object
     let newBook = document.createElement('div');
     newBook.classList.add('book');
 
-    //creates elements for book objects, ie title, imagebox, input for image, author, pagecount, read/notread
-    let title = document.createElement('div');
-    title.textContent = myLibrary[i]['title'];
-    title.classList.add('bookTitle');
+
 
     let imageBox = document.createElement('div');
     imageBox.classList.add('imageBox');
@@ -94,28 +65,58 @@ for (let i = 0; i < myLibrary.length; i++){
 
 
 
-
+    //creates elements for book objects, ie title, imagebox, input for image, author, pagecount, read/notread
+    let title = document.createElement('div');
+    title.textContent = book['title'];
+    title.classList.add('bookTitle');
 
     let author = document.createElement('div');
-    author.textContent = myLibrary[i]['author'];
+    author.textContent = book['author'];
     author.classList.add('bookAuthor');
 
 
     let pageCount = document.createElement('div');
-    pageCount.textContent = myLibrary[i]['pages'];
+    pageCount.textContent = book['pages'];
     pageCount.classList.add('pageCount');
 
 
     let read = document.createElement('div');
-    read.textContent = myLibrary[i]['read'];
+    read.textContent = book['read'];
     read.classList.add('read');
 
     //gives book the attributes
     newBook.append(title, imageBox, form, author, pageCount, read);
     //puts book on bookshelf
     bookshelf.appendChild(newBook);
+}
+
+
+function makeNewBook(){
+    const inputs = document.getElementById('my-form').elements;
+    let newBook = new Book(inputs['name'].value, inputs['author'].value, inputs['pages'].value, inputs['read'].value);
+    console.log(newBook);
+    addBookToLibrary(newBook);
+    exitPopUp()
 
 }
+
+
+
+
+// //makes books
+// let theHobbit = new Book('The Hobbit', 'JRR Tolkien', 295, true)
+// let theFellowship = new Book('The Fellowship of the Ring', 'JRR Tolkien', 423, true)
+// let twoTowers = new Book('The Two Towers', 'JRR Tolkien', 352, true) 
+// let returnOfTheKing = new Book ('The Return of the King', 'JRR Tolkien', 416, false)
+
+// //adds books to myLibrary array
+// addBookToLibrary(theHobbit)
+// addBookToLibrary(theFellowship)
+// addBookToLibrary(twoTowers)
+// addBookToLibrary(returnOfTheKing)
+
+// console.log(myLibrary)
+
 
 
 let exitPopUp = function(){
