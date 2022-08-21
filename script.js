@@ -108,7 +108,6 @@ function makeNewBook(){
     console.log(newBook);
     addBookToLibrary(newBook);
     exitPopUp()
-    return false
 }
 
 
