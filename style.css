@@ -97,6 +97,17 @@ html,body{
 
 }
 
+.beenRead{
+    border: solid;
+    border-color: green;
+}
+
+.notRead{
+    border: solid;
+    border-color: red;
+
+}
+
 .book > .imageBox{
     border: solid;
     height: 180px;

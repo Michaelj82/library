@@ -12,8 +12,14 @@ const popup = document.getElementById('popup');
 
 const searchbar = document.getElementById('searchbar');
 
+
+
 //selects bookshelf ID
 const bookshelf = document.getElementById('bookshelf');
+
+
+
+
 
 
 //book object
@@ -84,6 +90,9 @@ function addBookToLibrary(book){
 
     let read = document.createElement('div');
     read.textContent = book['read'];
+
+    const readState = read.textContent == 'True' ? newBook.classList.add('beenRead') : newBook.classList.add('notRead');
+
     read.classList.add('read');
 
     //gives book the attributes
@@ -99,8 +108,11 @@ function makeNewBook(){
     console.log(newBook);
     addBookToLibrary(newBook);
     exitPopUp()
-
+    return false
 }
+
+
+
 
 
 
@@ -144,3 +156,5 @@ let openAddNewBook = function(){
 
 
 }
+
+

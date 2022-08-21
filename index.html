@@ -19,15 +19,29 @@
             <button onclick="exitPopUp()">Click to exit</button>
 
             <div id="form">
-                <form id="my-form">
-                    
-                    <input type="text" placeholder="name" name = 'name'>
-                    <input type="text" placeholder="author" name = 'author'>
-                    <input type="text" placeholder="pages" name = 'pages'>
-                    <input type="text" placeholder="read" name = 'read'>
+                <form id="my-form" onsubmit="return makeNewBook()">
+                    <label for="name">Title of book: </label>
+                    <input type="text" placeholder="name" name = 'name' required>
 
-                    <input type='button' onclick="makeNewBook()" value="Submit"></input>
+                    <label for="author">Author: </label>
+                    <input type="text" placeholder="author" name = 'author' required>
+
+                    <label for="pages">Page Count: </label>
+                    <input type="number" placeholder="pages" name = 'pages' required>
+
                 
+                    <label for="read">Read?</label>
+                    <select name="read" id="read">
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+
+
+                    </select>
+
+                
+
+                    <input type="submit">
+
                 
                 </form>
             </div>
