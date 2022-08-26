@@ -23,14 +23,30 @@ const bookshelf = document.getElementById('bookshelf');
 
 
 //book object
-function Book(title, author, pages, read){
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
+// function Book(title, author, pages, read){
+//     this.title = title
+//     this.author = author
+//     this.pages = pages
+//     this.read = read
+
+
+// }
+
+
+class Book {
+
+    constructor(title, author, pages, read){
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read  = read
+
+    }
+
 
 
 }
+
 
 //adds book objects to myLibrary list
 
@@ -133,6 +149,13 @@ function makeNewBook(){
 
 
 let exitPopUp = function(){
+    const inputs = document.getElementById('my-form').elements;
+
+    for (let i = 0; i < inputs.length; i++){
+        inputs[i].disabled = true
+    };
+
+
     popup.style.opacity = '0.0';
     searchbar.disabled = false;
 
@@ -146,6 +169,11 @@ let exitPopUp = function(){
 //make popup for add new book form
 
 let openAddNewBook = function(){
+    const inputs = document.getElementById('my-form').elements;
+
+    for (let i = 0; i < inputs.length; i++){
+        inputs[i].disabled = false
+    };
 
     popup.style.opacity = '1.0';
     searchbar.disabled = true;
